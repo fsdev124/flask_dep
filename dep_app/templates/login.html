@@ -1,0 +1,48 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%- extends "base.html" %}
+
+
+{% block content %}
+   <div class="ping-container ping-signin login-template">
+    <div class="ping-header-logo">
+        <span class="company-logo">
+          <img src="{{url_for('static', filename='image/logo-transparent.png')}}">
+        </span>
+    </div>
+    <div class="ping-header">
+      <span class="company-logo"></span>
+      <text id="company-logo-div-text">
+        DEP Login
+      </text>
+    </div>
+    <div class="ping-body-container">
+      <form method="POST" action="">
+        {% if error_msg != "" %}
+        <div class="ping-messages">
+          <div class="ping-error">We didn't recognize the username or password you entered. Please try again.</div>
+        </div>
+        {% endif %}
+        <div class="ping-input-label">{{form.username.label.text}}</div>
+        <div class="ping-input-container">
+          {{form.username(id="username")}}
+        </div>
+        <div class="ping-input-label">{{form.password.label.text}}</div>
+        <div class="ping-input-container">
+          {{form.password(id="password")}}
+        </div>
+        <div class="ping-buttons">
+          <span id="signOnButtonSpan">
+            {{ form.csrf_token }}
+            {{ form.submit(id="signOnButton", class="ping-button normal allow") }}
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="ping-footer-container">
+      <div class="ping-footer">
+        <div class="ping-copyright"></div>
+      </div>
+    </div>
+  </div>
+{%- endblock %}

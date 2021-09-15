@@ -1,0 +1,23 @@
+{%- extends "bootstrap/base.html" %}
+
+{% block title %}DEP{% endblock %}
+
+{% import "bootstrap/fixes.html" as fixes %}
+
+{% block head %}
+{{super()}}
+
+{{fixes.ie8()}}
+{%- endblock %}
+
+{% block styles -%}
+    {{super()}}  
+    <meta name="viewport" content="width=1000, user-scalable=no">
+	<link rel="shortcut icon" href="{{url_for('static', filename='image/favicon.png')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/jquery-ui.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}?v=10">
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
