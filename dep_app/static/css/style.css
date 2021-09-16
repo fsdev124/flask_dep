@@ -12,7 +12,7 @@ body {
   overflow-x: auto;
 }
 .navbar {
-  padding: 8px;
+  padding: 10px;
   background: #383a3c;
   margin-bottom: 0;
   border: 0;
@@ -135,11 +135,12 @@ body {
 .navbar-right .export button span {
   margin-left: 10px;
 }
+
 .container:not(.error) {
   background: white;
   padding: 0;
-  width: auto;
-  height: calc(100vh - 66px);
+  height: calc(90vh - 60px);
+  margin-top: 30px;
 }
 .container.error-box {
   display: flex;
@@ -192,6 +193,49 @@ body {
 .header-wrap {
   height: 42px;
   user-select: none;
+}
+
+hr {
+  border-top: 1px solid #000;
+}
+.description {
+  background-image: linear-gradient(180deg, #ebeef1 0%, #ececec 100%);
+  height: 100%!important;
+  padding: 2em;
+}
+
+.description .info {
+  font-size: 16px;
+}
+
+.description .note {
+  margin-top: 30px;
+}
+
+.dep_form {
+  margin: 3em 2em;
+}
+
+.dep_form h1 {
+  margin-bottom: 0.75em;
+  font-size: 48px;
+}
+
+.dep_form .well {
+  background-color: #f4f4f4;
+  padding: 16px;
+}
+
+.enroll-button {
+  width: 60%;
+  border: 1px solid #b2deff !important;
+  background: #0092FF;
+  color: #fff;
+  border: 1px solid #076B8C;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0.5em;
 }
 
 .sidebar,
@@ -497,7 +541,7 @@ svg {
   padding-top: 8px;
   color: #5f6368;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 16px;
 }
 .form-group input + label {
   padding: 0;
