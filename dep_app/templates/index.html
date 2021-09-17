@@ -54,7 +54,7 @@
       <div class="col-md-7">
         <div class="dep_form">
           <h1>Enroll Devices</h1>
-          <form method="POST" action="/enroll">
+          <div>
             <div class="form-group row">
               <div class="col-md-12">
                 <div class="well">
@@ -110,7 +110,7 @@
                 CustomerID
               </div>
               <div class="col-md-7">
-                <input class="form-control" id="test" name="test" placeholder="19827" type="text" value="">
+                <input class="form-control" id="customer_id" name="customer_id" placeholder="19827" type="text" value="">
               </div>
             </div>
             <div class="form-group row">
@@ -128,11 +128,20 @@
             </div>
             <div class="form-group row">
               <div class="col-md-5">
-                Device IDs<span style="font-size: 12px;">&nbsp;(SN/IMEI/MEID)</span>
-                <div style="margin-top: 10px;">Every Device ID must be separated by line</div>
+                Ship Date
               </div>
               <div class="col-md-7">
-                <textarea class="form-control" id="devices" name="devices" placeholder="33645004YAM\n33615204YAM\n12645004IDN" rows="5"></textarea>
+                <input class="form-control" id="ship_date" name="ship_date" type="date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                Device IDs, Asset Tags
+                <div style="margin-top: 10px; font-size: 12px;">Device IDs are SN/IMEI/MEID</div>
+                <div style="font-size: 12px;">Asset Tags are additional info about the devices</div>
+              </div>
+              <div class="col-md-7">
+                <textarea class="form-control" id="devices" name="devices" placeholder="33645004YAM,A12354\n33615204YAM,A51683\n12645004IDN,A62141" rows="5"></textarea>
               </div>
             </div>
             <div class="form-group row">
@@ -141,7 +150,25 @@
                 <button class="enroll-button normal allow" id="btn_enroll">Submit</button>
               </div>
             </div>
-          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="enroll_result_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Enroll Result</h4>
+        </div>
+        <div class="modal-body">
+          <div class="enroll_result"></div>
+          <pre class="enroll_response"></pre>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

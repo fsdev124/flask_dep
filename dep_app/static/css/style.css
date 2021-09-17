@@ -226,6 +226,15 @@ hr {
   padding: 16px;
 }
 
+.dep_form .warning {
+  border: 1px solid red;
+}
+
+.enroll_result {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
 .enroll-button {
   width: 60%;
   border: 1px solid #b2deff !important;
