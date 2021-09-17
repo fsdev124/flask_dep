@@ -24,6 +24,7 @@ def stringToTime(string):
 def index():
     if not 'username' in session:
         return redirect(url_for('.login'))
+    
     return render_template("index.html")
 
 @frontend.route("/login", methods=('GET', 'POST'))
@@ -41,6 +42,14 @@ def login():
             return redirect(url_for('.index'))
 
     return render_template('login.html', form=form, error_msg=error_msg)
+
+@frontend.route("/enroll", methods=['POST'])
+def enroll():
+    if 'username' in session:
+        username = request.form['username']
+        return jsonify({'result': 'success'})
+
+    return jsonify({'result': 'invalid request'})
 
 @frontend.route("/logout")
 def logout():

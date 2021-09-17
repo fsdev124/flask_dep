@@ -51,6 +51,99 @@
           Please contact your Apple representative for more information.
         </div>
       </div>
+      <div class="col-md-7">
+        <div class="dep_form">
+          <h1>Enroll Devices</h1>
+          <form method="POST" action="/enroll">
+            <div class="form-group row">
+              <div class="col-md-12">
+                <div class="well">
+                  Please fill out the following ALL contexts.
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                DEP ENV
+              </div>
+              <div class="col-md-7">
+                <select class="form-control" id="dep_env" name="dep_env">
+                  <option value="UAT">UAT</option>
+                  <option value="PROD">PROD</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                DEP SHIP TO
+              </div>
+              <div class="col-md-7">
+                <input class="form-control" id="dep_ship_to" name="dep_ship_to" placeholder="0000052010">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                DEP Reseller ID
+              </div>
+              <div class="col-md-7">
+                <input class="form-control" id="dep_reseller_id" name="dep_reseller_id" placeholder="16FCE4A0">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                DEP UAT CERT
+              </div>
+              <div class="col-md-7">
+                <input class="form-control" id="dep_uat_cert" name="dep_uat_cert" placeholder="/path/to/acc/uat/cert.pem">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                DEP UAT Private Key
+              </div>
+              <div class="col-md-7">
+                <input class="form-control" id="dep_uat_private_key" name="dep_uat_private_key" placeholder="/path/to/acc/uat/cert_private_key.pem">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                CustomerID
+              </div>
+              <div class="col-md-7">
+                <input class="form-control" id="test" name="test" placeholder="19827" type="text" value="">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                Order Type
+              </div>
+              <div class="col-md-7">
+                <select class="form-control" id="order_type" name="order_type">
+                  <option value="OR">OR (Enroll Devices)</option>
+                  <option value="RE">RE (Un-enroll Devices)</option>
+                  <option value="OV">OV (Override Order)</option>
+                  <option value="VD">VD (Void Order)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5">
+                Device IDs<span style="font-size: 12px;">&nbsp;(SN/IMEI/MEID)</span>
+                <div style="margin-top: 10px;">Every Device ID must be separated by line</div>
+              </div>
+              <div class="col-md-7">
+                <textarea class="form-control" id="devices" name="devices" placeholder="33645004YAM\n33615204YAM\n12645004IDN" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-5"></div>
+              <div class="col-md-7">
+                <button class="enroll-button normal allow" id="btn_enroll">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <div class="tooltip"></div>
@@ -60,4 +153,5 @@
 <script src="{{url_for('static', filename='js/lib/jquery-ui.js')}}"></script>
 <script src="{{url_for('static', filename='js/lib/select2.min.js')}}"></script>
 <script src="{{url_for('static', filename='js/lib/highcharts.js')}}"></script>
+<script src="{{url_for('static', filename='js/scripts.js')}}?v=2"></script>
 {% endblock %}
